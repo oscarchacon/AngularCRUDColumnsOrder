@@ -1,0 +1,23 @@
+<ng-container [ngSwitch]="messageType">
+  <h3 *ngIf="messageTitle">{{messageTitle}}</h3>
+  <ng-container *ngSwitchCase="'success'">
+    <span>
+      <strong *ngIf="extraInfo" class="snackbar-success">Éxito</strong> {{message}}
+    </span>
+  </ng-container>
+  <ng-container *ngSwitchCase="'error'">
+    <span>
+      <strong *ngIf="extraInfo" class="snackbar-error">Error</strong> {{message}}
+    </span>
+  </ng-container>
+  <ng-container *ngSwitchCase="'warn'">
+    <span>
+      <strong *ngIf="extraInfo" class="snackbar-warn">Advertencia</strong> {{message}}
+    </span>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <span>
+      <strong *ngIf="extraInfo" class="snackbar-info">Información</strong> {{message}}
+    </span>
+  </ng-container>
+</ng-container>

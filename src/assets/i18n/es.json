@@ -1,0 +1,11 @@
+{
+  "ITEMS_PER_PAGE":"Elementos por página",
+  "LAST_PAGE": "Última página",
+  "FIRST_PAGE": "Primera página",
+  "NEXT_PAGE":"Página siguiente",
+  "OF_LABEL":"de",
+  "PREVIOUS_PAGE":"Página anterior",
+  "Entities_Page": {
+    "Add_Entity": "Agregar Entidad"
+  }
+}

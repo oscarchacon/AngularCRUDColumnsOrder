@@ -1,0 +1,32 @@
+<button
+  mat-flat-button
+  class="close-dialog"
+  aria-label="Cerrar"
+  (click)="close()"
+  matTooltip="Cerrar">
+  <span aria-hidden="true"><mat-icon>close</mat-icon></span>
+</button>
+<h2 mat-dialog-title>{{data.title}}</h2>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p>
+        {{ data.message }} <label><b>{{ data.question }}</b></label>
+      </p>
+
+      <p *ngIf="data.enterText">
+        <textarea
+          ref-textarea
+          [(ngModel)]="data.inputText"
+          rows="6"
+          cols="35"
+          placeholder="{{data.placeholder}}"
+        ></textarea>
+
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-flat-button color="primary" (click)="confirm()"><i class="ms-Icon ms-Icon--CheckMark"></i> Si</button>
+  <button mat-flat-button color="warn" (click)="decline()"><i class="ms-Icon ms-Icon--Cancel"></i> No</button>
+</div>
