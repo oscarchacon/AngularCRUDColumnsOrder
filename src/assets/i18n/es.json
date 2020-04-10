@@ -5,7 +5,21 @@
   "NEXT_PAGE":"Página siguiente",
   "OF_LABEL":"de",
   "PREVIOUS_PAGE":"Página anterior",
+  "CHANGE_LANGUAGE": "Cambiar Idioma",
   "Entities_Page": {
-    "Add_Entity": "Agregar Entidad"
+    "Add_Entity": "Agregar Entidad",
+    "Error_Label": "Error",
+    "Error_Load_Entities": "Error al Cargar Entidades",
+    "Name_Column": "Nombre",
+    "Description_Column": "Descripción",
+    "RegisterDate_Column": "Fecha de Registro",
+    "Options_Column": "Opciones",
+    "Edit_Option": "Editar",
+    "Delete_Option": "Eliminar",
+    "Delete_Entity_Successfull": "Se Eliminó Correctamente la Entidad",
+    "Delete_Entity_Error": "Error en eliminar Entidad",
+    "Delete_Entity_Title": "Eliminar Entidad",
+    "Delete_Entity_Message": "Va a eliminar Entidad",
+    "Delete_Entity_Question": "¿Desea Eliminar la Entidad?"
   }
 }

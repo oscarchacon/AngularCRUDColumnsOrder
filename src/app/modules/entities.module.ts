@@ -7,6 +7,9 @@ import { MaterialModule } from '../shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { FunctionsSharedModule } from '../shared/functions';
+import { SnackbarModule } from '../shared/components/snackbar/snackbar.module';
+import { LoadingIndicatorModule } from '../shared/components/loading-indicator/loading-indicator.module';
+import { QuestionModule } from '../shared/components/question/question.module';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { FunctionsSharedModule } from '../shared/functions';
     ReactiveFormsModule,
     TranslateModule,
     MaterialModule,
-    FunctionsSharedModule
+    FunctionsSharedModule,
+    SnackbarModule,
+    LoadingIndicatorModule,
+    QuestionModule
   ],
   providers: [
     EntityService

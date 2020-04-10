@@ -1,14 +1,59 @@
 <div class="card">
   <div class="card-body">
     <div class="row">
-      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <mat-form-field class="input-width">
+          <mat-label>{{'CHANGE_LANGUAGE' | translate}}</mat-label>
+          <mat-select placeholder="{{'CHANGE_LANGUAGE' | translate}}" (selectionChange)="changeLanguage($event)" >
+            <mat-option *ngFor="let language of languages" [value]="language.value">
+              {{ language.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
       <div class="col-sm-4 offset-sm-4 text-right">
         <button type="button" class="btn btn-sm btn-outline-primary v-align-center"><mat-icon>add_circle_outline</mat-icon> {{ 'Entities_Page.Add_Entity' | translate }}</button>
       </div>
     </div>
     <mat-divider></mat-divider>
     <div class="row">
-      <div class="col-sm-12"></div>
+      <div class="col-sm-12">
+        <loading-indicator *ngIf="loadingData; else ENTITYLIST"></loading-indicator>
+        <ng-template #ENTITYLIST>
+          <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" [matSortActive]="columnName" [matSortDirection]="sortDirection" matSortDisableClear>
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Entities_Page.Name_Column' | translate }} </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Entities_Page.Description_Column' | translate}} </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="registerDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Entities_Page.RegisterDate_Column' | translate}} </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.registerDate | date: 'dd/MM/yyyy'}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="option">
+              <mat-header-cell *matHeaderCellDef> {{'Entities_Page.Options_Column' | translate}} </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                  <button type="button" matTooltip="{{'Entities_Page.Edit_Option' | translate}}" class="btn btn-info" (click)="openDialogEditEntity(element)"><mat-icon>edit</mat-icon></button>
+                  <button type="button" matTooltip="{{'Entities_Page.Delete_Option' | translate}}" class="btn btn-danger" (click)="openDialogToDelete(element)"><mat-icon>delete</mat-icon></button>
+                </div>
+                <!--<button mat-flat-button color="primary" (click)="openDialogEditCompany(element, i)"><i class="ms-Icon ms-Icon--EditSolid12"></i> Editar</button>
+                <button mat-flat-button color="accent" (click)="openDialogToDelete(element)"><i class="ms-Icon ms-Icon--Delete"></i> Eliminar</button>-->
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <mat-paginator [length]="total" [pageSize]="pageSize" [pageSizeOptions]="intervals" (page)="onPaginateChange($event)" [pageIndex]="page - 1" showFirstLastButtons></mat-paginator>
+        </ng-template>
+      </div>
     </div>
     <p>entity-list works!</p>
   </div>

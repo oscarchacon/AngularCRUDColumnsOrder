@@ -5,7 +5,21 @@
   "NEXT_PAGE": "Next page",
   "OF_LABEL": "of",
   "PREVIOUS_PAGE": "Previous page",
+  "CHANGE_LANGUAGE": "Change Language",
   "Entities_Page": {
-    "Add_Entity": "Add Entity"
+    "Add_Entity": "Add Entity",
+    "Error_Label": "Error",
+    "Error_Load_Entities": "Error Entities Load",
+    "Name_Column": "Name",
+    "Description_Column": "Description",
+    "RegisterDate_Column": "Register Date",
+    "Options_Column": "Options",
+    "Edit_Option": "Edit",
+    "Delete_Option": "Delete",
+    "Delete_Entity_Successfull": "Successfully deleted Entity",
+    "Delete_Entity_Error": "Entity Delete Error",
+    "Delete_Entity_Title": "Delete Entity",
+    "Delete_Entity_Message": "It will eliminate Entity",
+    "Delete_Entity_Question": "Do you want to Delete the Entity?"
   }
 }
