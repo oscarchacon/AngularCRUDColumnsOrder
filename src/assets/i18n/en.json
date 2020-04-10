@@ -21,5 +21,9 @@
     "Delete_Entity_Title": "Delete Entity",
     "Delete_Entity_Message": "It will eliminate Entity",
     "Delete_Entity_Question": "Do you want to Delete the Entity?"
+  },
+  "Question_Dialog": {
+    "Yes_Label": "Yes",
+    "No_Label": "No"
   }
 }

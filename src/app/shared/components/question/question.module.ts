@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { QuestionService } from './service/question.service';
 import { QuestionComponent } from './question.component';
 import { MaterialModule } from '../../material/material.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MaterialModule } from '../../material/material.module';
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    TranslateModule
   ],
   providers: [
     QuestionService
