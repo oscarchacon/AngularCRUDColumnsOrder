@@ -34,7 +34,10 @@
 
             <ng-container matColumnDef="registerDate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Entities_Page.RegisterDate_Column' | translate}} </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.registerDate | date: 'dd/MM/yyyy'}} </mat-cell>
+              <mat-cell *matCellDef="let element">
+                <ng-container *ngIf="activeLang != 'en'; else ENLGISHDATE">{{element.registerDate | date: 'dd/MM/yyyy'}}</ng-container>
+                <ng-template #ENLGISHDATE>{{element.registerDate | date: 'MM-dd-yyyy'}}</ng-template>
+              </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="option">
