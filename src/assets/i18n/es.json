@@ -6,6 +6,7 @@
   "OF_LABEL":"de",
   "PREVIOUS_PAGE":"Página anterior",
   "CHANGE_LANGUAGE": "Cambiar Idioma",
+  "SELECT_LANGUAGE": "Seleccionar Idioma",
   "Entities_Page": {
     "Add_Entity": "Agregar Entidad",
     "Error_Label": "Error",
@@ -25,5 +26,31 @@
   "Question_Dialog": {
     "Yes_Label": "Si",
     "No_Label": "No"
+  },
+  "SnackBar": {
+    "Error_Title": "Error",
+    "Success_Title": "Éxito",
+    "Warning_Title": "Advertencia",
+    "Info_Title": "Información"
+  },
+  "Entitiy_Modal": {
+    "Close_Window_Title": "Cerrar Ventana",
+    "Cancel_Changes_Question": "¿Desea cancelar los cambios?",
+    "Not_Changes_Saved": "Aún no ha guardado los cambios",
+    "New_Entity_Title": "Registrar Nueva Entidad",
+    "Edit_Entity_Title": "Editar Entidad",
+    "Name_Required_Message": "El nombre de la entidad es necesario",
+    "Entity_Id_Missing": "Falta Id de Entidad",
+    "Entity_Name_Missing": "Falta Nombre de Entidad",
+    "Entity_Changes_Saved": "Se guardaron los cambios de Entidad",
+    "Entity_Error_Changes_Saved": "Error al guardar cambios de Entidad",
+    "Entity_Register_Successfully": "Ser registro nueva entidad con éxito",
+    "Entity_Register_Error": "Error al registrar nueva Entidad",
+    "Entity_Name_Label": "Nombre de Entidad",
+    "Entity_Description_Label": "Descripción de Entidad",
+    "Close_Modal": "Cerrar",
+    "Save_Entity": "Guardar",
+    "Enter_Entity_Name": "Ingrese Nombre de Entidad",
+    "Enter_Entity_Description": "Ingrese Descripción de Entidad"
   }
 }

@@ -6,6 +6,7 @@
   "OF_LABEL": "of",
   "PREVIOUS_PAGE": "Previous page",
   "CHANGE_LANGUAGE": "Change Language",
+  "SELECT_LANGUAGE": "Select Language",
   "Entities_Page": {
     "Add_Entity": "Add Entity",
     "Error_Label": "Error",
@@ -25,5 +26,31 @@
   "Question_Dialog": {
     "Yes_Label": "Yes",
     "No_Label": "No"
+  },
+  "SnackBar": {
+    "Error_Title": "Error",
+    "Success_Title": "Success",
+    "Warning_Title": "Warning",
+    "Info_Title": "Information"
+  },
+  "Entitiy_Modal": {
+    "Close_Window_Title": "Close Window",
+    "Cancel_Changes_Question": "Do you want to cancel the changes?",
+    "Not_Changes_Saved": "You haven't Saved any changes yet",
+    "New_Entity_Title": "Register New Entity",
+    "Edit_Entity_Title": "Edit Entity",
+    "Name_Required_Message": "The entity name is required",
+    "Entity_Id_Missing": "Entity Id Missing",
+    "Entity_Name_Missing": "Entity Name Missing",
+    "Entity_Changes_Saved": "Entity changes saved",
+    "Entity_Error_Changes_Saved": "Error saving Entity changes",
+    "Entity_Register_Successfully": "New Entity registered successfully",
+    "Entity_Register_Error": "Error registering new Entity",
+    "Entity_Name_Label": "Entity Name",
+    "Entity_Description_Label": "Entity Description",
+    "Close_Modal": "Close",
+    "Save_Entity": "Save",
+    "Enter_Entity_Name": "Enter Entity Name",
+    "Enter_Entity_Description": "Enter Entity Name"
   }
 }

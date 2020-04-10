@@ -2,22 +2,22 @@
   <h3 *ngIf="messageTitle">{{messageTitle}}</h3>
   <ng-container *ngSwitchCase="'success'">
     <span>
-      <strong *ngIf="extraInfo" class="snackbar-success">Éxito</strong> {{message}}
+      <strong *ngIf="extraInfo" class="snackbar-success">{{'SnackBar.Success_Title' | translate}}</strong> {{message}}
     </span>
   </ng-container>
   <ng-container *ngSwitchCase="'error'">
     <span>
-      <strong *ngIf="extraInfo" class="snackbar-error">Error</strong> {{message}}
+      <strong *ngIf="extraInfo" class="snackbar-error">{{'SnackBar.Error_Title' | translate}}</strong> {{message}}
     </span>
   </ng-container>
   <ng-container *ngSwitchCase="'warn'">
     <span>
-      <strong *ngIf="extraInfo" class="snackbar-warn">Advertencia</strong> {{message}}
+      <strong *ngIf="extraInfo" class="snackbar-warn">{{'SnackBar.Warning_Title' | translate}}</strong> {{message}}
     </span>
   </ng-container>
   <ng-container *ngSwitchDefault>
     <span>
-      <strong *ngIf="extraInfo" class="snackbar-info">Información</strong> {{message}}
+      <strong *ngIf="extraInfo" class="snackbar-info">{{'SnackBar.Info_Title' | translate}}</strong> {{message}}
     </span>
   </ng-container>
 </ng-container>

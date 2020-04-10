@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService } from 'src/app/core/services';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Entity } from 'src/app/models';
+import { Entity, EntityRegisterModel } from 'src/app/models';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,9 @@ export class EntityService extends BaseService{
   }
 
   saveNewEntity(entity: Entity): Observable<any> {
-    return this.post(`${this.relativeUrl}/Create`, entity);
+    let entityRegister: EntityRegisterModel;
+    entityRegister = entity;
+    return this.post(`${this.relativeUrl}/Create`, entityRegister);
   }
 
   saveEditEntity(entity: Entity): Observable<any> {

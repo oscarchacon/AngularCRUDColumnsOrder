@@ -28,6 +28,10 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.full-width {
+  width: 100%;
+}
+
 .v-align-center {
   display: inline-flex !important;
   vertical-align: middle !important;
@@ -45,4 +49,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 5px;
   line-height: 14px;
   min-width: auto;
+}
+
+.btn-margin {
+  margin-left: 5px;
+  margin-right: 5px;
 }

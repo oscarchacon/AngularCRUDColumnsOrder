@@ -63,13 +63,7 @@ export class EntityListComponent implements OnInit, OnDestroy {
     this.total = 0;
     this.loadingData = false;
     this.dataSource = new MatTableDataSource<Entity>();
-    this.params = [ 'Entities_Page.Delete_Entity_Title',
-                    'Entities_Page.Delete_Entity_Message',
-                    'Entities_Page.Delete_Entity_Question',
-                    'Entities_Page.Error_Label',
-                    'Entities_Page.Error_Load_Entities',
-                    'Entities_Page.Delete_Entity_Successfull',
-                    'Entities_Page.Delete_Entity_Error'];
+    this.params = [ 'Entities_Page'];
   }
 
   ngOnInit(): void {
@@ -96,7 +90,7 @@ export class EntityListComponent implements OnInit, OnDestroy {
                                                       this.loadingData = false;
                                                     }, error => {
                                                       const labels = this.getTranslations(this.params);
-                                                      this.snackBarService.openSnackBar(2000, `${labels['Entities_Page.Error_Load_Entities']}: ${error}`, 'error', `${labels['Entities_Page.Error_Label']}`);
+                                                      this.snackBarService.openSnackBar(2000, `${labels.Entities_Page.Error_Load_Entities}: ${error}`, 'error', `${labels.Entities_Page.Error_Label}`);
                                                       this.loadingData = false;
                                                     });
   }
@@ -181,7 +175,7 @@ export class EntityListComponent implements OnInit, OnDestroy {
 
   openDialogToDelete(entity: Entity): void {
     const labels = this.getTranslations(this.params);
-    const questionDialog = this.questionService.openModalQuestion(`${labels['Entities_Page.Delete_Entity_Title']}`, `${labels['Entities_Page.Delete_Entity_Message']}: ${entity.name}`, `${labels['Entities_Page.Delete_Entity_Question']}`);
+    const questionDialog = this.questionService.openModalQuestion(`${labels.Entities_Page.Delete_Entity_Title}`, `${labels.Entities_Page.Delete_Entity_Message}: ${entity.name}`, `${labels.Entities_Page.Delete_Entity_Question}`);
     this.openDialogSubscription = questionDialog.afterClosed()
                                                 .subscribe((response: any) => {
                                                   if (response && response.question) {
@@ -197,13 +191,13 @@ export class EntityListComponent implements OnInit, OnDestroy {
                                                         if (!result) {
                                                           const labels = this.getTranslations(this.params);
                                                           // tslint:disable-next-line: max-line-length
-                                                          this.snackBarService.openSnackBar(2000, labels['Entities_Page.Delete_Entity_Successfull'], 'success');
+                                                          this.snackBarService.openSnackBar(2000, labels.Entities_Page.Delete_Entity_Successfull, 'success');
                                                           this.getEntitiesPaged(this.page, this.pageSize, this.columnName, this.desc);
                                                         }
                                                         this.loadingData = false;
                                                       }, error => {
                                                         const labels = this.getTranslations(this.params);
-                                                        this.snackBarService.openSnackBar(2000, `${labels['Entities_Page.Delete_Entity_Error']} ${error}`, 'error');
+                                                        this.snackBarService.openSnackBar(2000, `${labels.Entities_Page.Delete_Entity_Error} ${error}`, 'error');
                                                         this.loadingData = false;
                                                       });
   }

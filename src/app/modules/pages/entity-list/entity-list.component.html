@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-4">
         <mat-form-field class="input-width">
-          <mat-label>{{'CHANGE_LANGUAGE' | translate}}</mat-label>
+          <mat-label>{{'SELECT_LANGUAGE' | translate}}</mat-label>
           <mat-select placeholder="{{'CHANGE_LANGUAGE' | translate}}" (selectionChange)="changeLanguage($event)" >
             <mat-option *ngFor="let language of languages" [value]="language.value">
               {{ language.name }}
@@ -12,10 +12,11 @@
         </mat-form-field>
       </div>
       <div class="col-sm-4 offset-sm-4 text-right">
-        <button type="button" class="btn btn-sm btn-outline-primary v-align-center"><mat-icon>add_circle_outline</mat-icon> {{ 'Entities_Page.Add_Entity' | translate }}</button>
+        <button type="button" class="btn btn-sm btn-outline-primary v-align-center" (click)="openDialogNewEntity()"><mat-icon>add_circle_outline</mat-icon> {{ 'Entities_Page.Add_Entity' | translate }}</button>
       </div>
     </div>
     <mat-divider></mat-divider>
+    <br>
     <div class="row">
       <div class="col-sm-12">
         <loading-indicator *ngIf="loadingData; else ENTITYLIST"></loading-indicator>
@@ -40,8 +41,8 @@
               <mat-header-cell *matHeaderCellDef> {{'Entities_Page.Options_Column' | translate}} </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                  <button type="button" matTooltip="{{'Entities_Page.Edit_Option' | translate}}" class="btn btn-info" (click)="openDialogEditEntity(element)"><mat-icon>edit</mat-icon></button>
-                  <button type="button" matTooltip="{{'Entities_Page.Delete_Option' | translate}}" class="btn btn-danger" (click)="openDialogToDelete(element)"><mat-icon>delete</mat-icon></button>
+                  <button type="button" matTooltip="{{'Entities_Page.Edit_Option' | translate}}" class="btn btn-sm btn-info v-align-center" (click)="openDialogEditEntity(element)"><mat-icon>edit</mat-icon></button>
+                  <button type="button" matTooltip="{{'Entities_Page.Delete_Option' | translate}}" class="btn btn-sm btn-danger v-align-center" (click)="openDialogToDelete(element)"><mat-icon>delete</mat-icon></button>
                 </div>
                 <!--<button mat-flat-button color="primary" (click)="openDialogEditCompany(element, i)"><i class="ms-Icon ms-Icon--EditSolid12"></i> Editar</button>
                 <button mat-flat-button color="accent" (click)="openDialogToDelete(element)"><i class="ms-Icon ms-Icon--Delete"></i> Eliminar</button>-->
@@ -55,6 +56,5 @@
         </ng-template>
       </div>
     </div>
-    <p>entity-list works!</p>
   </div>
 </div>

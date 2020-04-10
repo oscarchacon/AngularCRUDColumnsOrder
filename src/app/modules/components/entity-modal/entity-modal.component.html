@@ -1,1 +1,36 @@
-<p>entity-modal works!</p>
+<button mat-flat-button
+        class="close-dialog"
+        aria-label="Cerrar"
+        (click)="checkClose()"
+        type="button">
+  <span aria-hidden="true"><mat-icon>close</mat-icon></span>
+</button>
+<loading-indicator *ngIf="loadingSave; else ENTITYFORM"></loading-indicator>
+<ng-template #ENTITYFORM>
+  <form [formGroup]="entityForm" (ngSubmit)="onSubmitSave(entityForm)">
+    <h1 mat-dialog-title>{{title}}</h1>
+    <mat-dialog-content>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Entitiy_Modal.Entity_Name_Label' | translate}}</mat-label>
+        <input type="text" matInput maxlength="50" placeholder="{{'Entitiy_Modal.Enter_Entity_Name' | translate}}" formControlName="name" required>
+        <mat-error *ngFor="let validation of validationMessages.name">
+          <mat-error class="error-message"
+                    *ngIf="entityForm.get('name').hasError(validation.type)
+                            && (entityForm.get('name').dirty
+                            || entityForm.get('name').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{'Entitiy_Modal.Entity_Description_Label' | translate}}</mat-label>
+        <textarea matInput placeholder="{{'Entitiy_Modal.Enter_Entity_Description' | translate}}" formControlName="description"></textarea>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="btn btn-sm btn-secondary v-align-center btn-margin" (click)="checkClose()" type="button"><mat-icon>close</mat-icon> {{'Entitiy_Modal.Close_Modal' | translate}}</button>
+      <button class="btn btn-sm btn-primary v-align-center btn-margin" type="submit" [disabled]="!entityForm.valid"><mat-icon>save</mat-icon> {{'Entitiy_Modal.Save_Entity' | translate}}</button>
+    </mat-dialog-actions>
+  </form>
+</ng-template>
