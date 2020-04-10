@@ -93,8 +93,6 @@ export class EntityModalComponent implements OnInit, OnDestroy {
         { type: 'required', message: labels.Entitiy_Modal.Name_Required_Message }
       ]
     };
-
-    console.log(this.validationMessages);
   }
 
   close(data?: any): void {
