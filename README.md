@@ -96,6 +96,10 @@ estructura se detalla a continuación:
         diferentes solicitudes, peticiones o componentes que se
         encuentren en la app. Estos pueden ser ocupados a nivel local,
         siempre y cuando, se declaren en los módulos correspondientes.
+        
+LICENCIA.
+==========
+Este Template contiene la licencia MIT.
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
