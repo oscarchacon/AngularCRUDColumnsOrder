@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
   // tslint:disable-next-line: component-selector
   selector: 'loading-indicator',
   templateUrl: './loading-indicator.component.html',

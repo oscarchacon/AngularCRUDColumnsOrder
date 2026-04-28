@@ -11,6 +11,7 @@ import { EntityService } from '../../services';
 import { SnackbarService } from 'src/app/shared/components/snackbar/services/snackbar.service';
 
 @Component({
+  standalone: false,
   selector: 'app-entity-modal',
   templateUrl: './entity-modal.component.html',
   styleUrls: ['./entity-modal.component.scss']
@@ -126,16 +127,7 @@ export class EntityModalComponent implements OnInit, OnDestroy {
   }
 
   private getTranslations(params: string[]): any {
-    let items: any;
-    const prom = new Promise(resolve => {
-      this.translate.get(params).subscribe(translation => {
-        if (translation) {
-          items = translation;
-          resolve(items);
-        }
-      });
-    });
-    return items;
+    return this.translate.instant(params);
   }
 
   checkDataBeforeSave(entity: Entity): boolean {

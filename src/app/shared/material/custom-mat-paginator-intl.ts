@@ -7,14 +7,14 @@ export class CustomMatPaginatorIntl extends MatPaginatorIntl {
   constructor(private translate: TranslateService) {
     super();
 
-    this.translate.onLangChange.subscribe((e: Event) => {
+    this.translate.onLangChange.subscribe(() => {
       this.getAndInitTranslations();
     });
 
     this.getAndInitTranslations();
   }
 
-  getAndInitTranslations() {
+  getAndInitTranslations(): void {
 
     // tslint:disable-next-line: max-line-length
     /*this.translate.get(['ITEMS_PER_PAGE', 'NEXT_PAGE', 'PREVIOUS_PAGE', 'LAST_PAGE', 'FIRST_PAGE',  'OF_LABEL']).subscribe(translation => {
@@ -38,7 +38,7 @@ export class CustomMatPaginatorIntl extends MatPaginatorIntl {
 
   getRangeLabel = (page: number, pageSize: number, length: number) =>  {
     const params: string[] = ['OF_LABEL'];
-    const labels = this.getTranslations(params)
+    const labels = this.getTranslations(params);
     if (length === 0 || pageSize === 0) {
       return `0 / ${length}`;
     }
@@ -49,15 +49,6 @@ export class CustomMatPaginatorIntl extends MatPaginatorIntl {
   }
 
   private getTranslations(params: string[]): any {
-    let items: any;
-    const prom = new Promise(resolve => {
-      this.translate.get(params).subscribe(translation => {
-        if (translation) {
-          items = translation;
-          resolve(items);
-        }
-      });
-    })
-    return items;
+    return this.translate.instant(params);
   }
 }

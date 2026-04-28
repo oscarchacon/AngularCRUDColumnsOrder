@@ -9,9 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [
     SnackbarComponent
   ],
-  entryComponents: [
-    SnackbarComponent
-  ],
   imports: [
     CommonModule,
     MaterialModule,

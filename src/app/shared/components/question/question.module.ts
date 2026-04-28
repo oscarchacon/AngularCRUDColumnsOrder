@@ -10,9 +10,6 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [
     QuestionComponent
   ],
-  entryComponents: [
-    QuestionComponent
-  ],
   imports: [
     CommonModule,
     FormsModule,

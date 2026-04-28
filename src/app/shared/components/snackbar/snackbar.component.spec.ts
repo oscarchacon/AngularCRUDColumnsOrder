@@ -1,4 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { SnackbarComponent } from './snackbar.component';
 
@@ -6,9 +8,13 @@ describe('SnackbarComponent', () => {
   let component: SnackbarComponent;
   let fixture: ComponentFixture<SnackbarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SnackbarComponent ]
+      imports: [TranslateModule.forRoot()],
+      declarations: [SnackbarComponent],
+      providers: [
+        { provide: MAT_SNACK_BAR_DATA, useValue: { message: '', messageTitle: '', messageType: 'info', extraInfo: false } }
+      ]
     })
     .compileComponents();
   }));
@@ -16,7 +22,6 @@ describe('SnackbarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SnackbarComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

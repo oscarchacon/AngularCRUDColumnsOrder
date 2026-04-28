@@ -1,4 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { EntityService } from './entity.service';
 
@@ -6,7 +8,13 @@ describe('EntityService', () => {
   let service: EntityService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        EntityService,
+        provideHttpClient(),
+        provideHttpClientTesting()
+      ]
+    });
     service = TestBed.inject(EntityService);
   });
 

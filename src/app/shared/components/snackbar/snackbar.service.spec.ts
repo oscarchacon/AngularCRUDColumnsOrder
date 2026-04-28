@@ -1,12 +1,17 @@
 import { TestBed } from '@angular/core/testing';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { SnackbarService } from './services/snackbar.service';
 
 describe('SnackbarService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({
+    providers: [
+      { provide: MatSnackBar, useValue: { openFromComponent: jasmine.createSpy('openFromComponent') } }
+    ]
+  }));
 
   it('should be created', () => {
-    const service: SnackbarService = TestBed.get(SnackbarService);
+    const service: SnackbarService = TestBed.inject(SnackbarService);
     expect(service).toBeTruthy();
   });
 });

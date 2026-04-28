@@ -17,9 +17,6 @@ import { QuestionModule } from '../shared/components/question/question.module';
     EntityModalComponent,
     EntityListComponent
   ],
-  entryComponents: [
-    EntityModalComponent
-  ],
   imports: [
     CommonModule,
     FormsModule,

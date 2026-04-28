@@ -12,6 +12,7 @@ import { DialogStateEnum } from 'src/app/shared/enums';
 import { EntityModalComponent } from '../../components';
 
 @Component({
+  standalone: false,
   selector: 'app-entity-list',
   templateUrl: './entity-list.component.html',
   styleUrls: ['./entity-list.component.scss']
@@ -96,16 +97,7 @@ export class EntityListComponent implements OnInit, OnDestroy {
   }
 
   private getTranslations(params: string[]): any {
-    let items: any;
-    const prom = new Promise(resolve => {
-      this.translate.get(params).subscribe(translation => {
-        if (translation) {
-          items = translation;
-          resolve(items);
-        }
-      });
-    });
-    return items;
+    return this.translate.instant(params);
   }
 
   onPaginateChange(event: any): void {
